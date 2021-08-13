@@ -112,6 +112,17 @@ Build an API inside the `api` folder with endpoints for:
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain the difference between Relational Databases and SQL.
+
+  A) A relational database stores information in a table that is made up of columns and rows. SQL is a language used to access the information in the database(s). In SQLite Studio, we've learned the basic SQL commands needed to retrieve specific information from specific tables.
+
 2. Why do tables need a Primary Key?
+
+  A) Tables need a primary key to ensure each row in the table has different values (is unique). This makes it a lot easier to find information that we need.
+
 3. What is the name given to a table column that references the Primary Key on another table?
+
+  A) A table column that is used to reference the Primary Key on another table is called a Foreign Key.
+
 4. What do we need in order to have a _many to many_ relationship between two tables?
+
+  A) In order to have a many to many relationship, a connecting table is needed. This table takes information from each table and allows the information to be retrieved from both (or however many).
