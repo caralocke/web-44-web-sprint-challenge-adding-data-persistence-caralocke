@@ -11,7 +11,8 @@ async function findById(resource_id) {
 }
 
 async function add(resource) {
-    return await db('resources').insert(resource)
+    const [resource_id] = await db('resources').insert(resource)
+    return resource_id
 }
 
 module.exports = {

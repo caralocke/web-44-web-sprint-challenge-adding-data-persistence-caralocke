@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Resources = require('./model')
+const { validateResource } = require('./middleware')
 
 router.get('/', (req, res, next) => {
     Resources.findAll()
@@ -10,11 +11,11 @@ router.get('/', (req, res, next) => {
         .catch(next)
 })
 
-router.post('/', (req, res, next) => {
-    const resource = req.body
-    Resources.add(resource)
-        .then((resp) => {
-            Resources.findById(resp)
+router.post('/', validateResource, (req, res, next) => {
+    const newResource = req.body
+    Resources.add(newResource)
+        .then((resource_id) => {
+            Resources.findById(resource_id)
                 .then(resource => {
                     res.status(201).json(resource)
                 })
