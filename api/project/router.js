@@ -2,8 +2,8 @@ const express = require('express')
 const Projects = require('./model')
 const router = express.Router()
 
-router.get('/', async (req, res, next) => {
-    await Projects.getProjects()
+router.get('/', (req, res, next) => {
+     Projects.findAll()
         .then(projects => {
             res.status(200).json(projects)
         })

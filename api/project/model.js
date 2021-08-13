@@ -1,7 +1,7 @@
 const db = require('../../data/dbConfig')
 
-async function findAll() {
-    return db('projects')
+function findAll() {
+  return db('projects')
 }
 
 const add = async (project) => {
